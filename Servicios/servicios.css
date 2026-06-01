@@ -1,44 +1,50 @@
-/* Centrar todo el contenido */
-.contenedor {
-    display: flex;              /* Activa flexbox */
-    flex-direction: column;     /* Organiza en columna: primero la imagen, luego los botones */
-    align-items: center;        /* Centra horizontalmente todo */
-    text-align: center;         /* Centra el texto dentro de los elementos */
-}
-
-/* Evita scroll horizontal innecesario */
+/* ==================== CONFIGURACIÓN GENERAL ==================== */
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #000;     /* Fondo negro */
-    overflow-x: hidden;         /* 🔥 Elimina la barra horizontal */
+    margin: 0;                   /* Elimina márgenes por defecto del navegador */
+    padding: 0;                  /* Elimina relleno por defecto */
+    background-color: #000;      /* Fondo negro uniforme */
+    overflow-x: hidden;          /* 🔥 Evita la barra horizontal innecesaria */
 }
 
+/* Contenedor principal */
+.contenedor {
+    display: flex;               /* Activa flexbox */
+    flex-direction: column;      /* Organiza en columna: primero la imagen, luego los botones */
+    align-items: center;         /* Centra horizontalmente todo el contenido */
+    justify-content: center;     /* Centra verticalmente si hay espacio */
+    text-align: center;          /* Centra el texto dentro de los elementos */
+    width: 100%;                 /* Ocupa todo el ancho disponible */
+    box-sizing: border-box;      /* Incluye padding/border en el cálculo del ancho */
+}
 
-/* Imagen del título */
+/* Imagen del título centrada */
 .titulo-secciones {
-    display: block;
-    margin: 0 auto 30px auto;   /* Centrada y con espacio abajo */
-    max-width: 600px;           /* Ajusta el tamaño */
+    display: block;              /* Se comporta como bloque */
+    margin-left: auto;           /* Empuja hacia la derecha */
+    margin-right: auto;          /* Empuja hacia la izquierda → queda centrada */
+    margin-bottom: 30px;         /* Espacio debajo de la imagen */
+    max-width: 600px;            /* Limita el ancho máximo */
+    width: 100%;                 /* 🔥 Ocupa todo el ancho disponible del contenedor */
+    height: auto;                /* Mantiene proporción de la imagen */
 }
 
-/* Contenedor de botones */
+
+
+/* ==================== BOTONES ==================== */
 .secciones {
-    display: flex;              /* Botones en fila */
-    justify-content: center;    /* Centrado horizontal */
-    gap: 20px;                  /* Espacio entre botones */
-    flex-wrap: wrap;            /* Que bajen si no caben */
+    display: flex;               /* Botones en fila */
+    justify-content: center;     /* Centrado horizontal */
+    gap: 20px;                   /* Espacio entre botones */
+    flex-wrap: wrap;             /* Que bajen si no caben en una sola fila */
 }
 
 /* Responsive: en móviles se apilan */
 @media (max-width: 768px) {
     .secciones {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column;  /* Botones en columna */
+        align-items: center;     /* Centra los botones */
     }
 }
-
-
 
 /* ======== BOTÓN ESTILIZADO ======== */
 /* 🔥 Aplica estilo tanto a <button> como a <a> */
@@ -61,7 +67,6 @@ a.btn-155, button.btn-155 {
     align-items: center;         /* Centra el contenido verticalmente */
     font-weight: bold;           /* Texto en negrita */
     background-image: radial-gradient(circle at center center, #4b0082, #ff1493); /* Morado a fucsia */
-
 }
 
 /* Icono dentro del botón */
@@ -101,7 +106,7 @@ a.btn-155, button.btn-155 {
     transform: scale(0.95);      /* El ícono se reduce un poco al hacer clic */
 }
 
-/*** disabled style ***/
+/* Estado deshabilitado */
 a.btn-155:disabled, button.btn-155:disabled {
     pointer-events: none;        /* Desactiva interacción */
     opacity: .65;                /* Botón más transparente */
