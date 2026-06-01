@@ -1,0 +1,117 @@
+/* Centrar todo el contenido */
+.contenedor {
+    display: flex;              /* Activa flexbox */
+    flex-direction: column;     /* Organiza en columna: primero la imagen, luego los botones */
+    align-items: center;        /* Centra horizontalmente todo */
+    text-align: center;         /* Centra el texto dentro de los elementos */
+}
+
+/* Evita scroll horizontal innecesario */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;     /* Fondo negro */
+    overflow-x: hidden;         /* 🔥 Elimina la barra horizontal */
+}
+
+
+/* Imagen del título */
+.titulo-secciones {
+    display: block;
+    margin: 0 auto 30px auto;   /* Centrada y con espacio abajo */
+    max-width: 600px;           /* Ajusta el tamaño */
+}
+
+/* Contenedor de botones */
+.secciones {
+    display: flex;              /* Botones en fila */
+    justify-content: center;    /* Centrado horizontal */
+    gap: 20px;                  /* Espacio entre botones */
+    flex-wrap: wrap;            /* Que bajen si no caben */
+}
+
+/* Responsive: en móviles se apilan */
+@media (max-width: 768px) {
+    .secciones {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+/* ======== BOTÓN ESTILIZADO ======== */
+/* 🔥 Aplica estilo tanto a <button> como a <a> */
+a.btn-155, button.btn-155 {
+    background: #00a1ff;         /* Color de fondo base (azul) */
+    color: white;                /* Texto en blanco */
+    font-size: 16px;             /* Tamaño de fuente */
+    border-radius: 10px;         /* Bordes redondeados */
+    border: none;                /* Sin borde externo */
+    letter-spacing: 1px;         /* Espaciado entre letras */
+    padding: 13px 50px 13px 13px;/* Espaciado interno: más ancho a la derecha para el ícono */
+    overflow: hidden;            /* Oculta contenido que se salga del área del botón */
+    position: relative;          /* Necesario para posicionar el ícono dentro del botón */
+    font-family: Arial, Helvetica, sans-serif; /* Fuente limpia */
+    cursor: pointer;             /* Cursor tipo “mano” al pasar encima */
+    text-decoration: none;       /* 🔥 Quita el subrayado en <a> */
+    user-select: none;           /* Evita seleccionar el texto del botón */
+    display: inline-flex;        /* Flexbox interno para alinear ícono y texto */
+    justify-content: center;     /* Centra el contenido horizontalmente */
+    align-items: center;         /* Centra el contenido verticalmente */
+    font-weight: bold;           /* Texto en negrita */
+    background-image: radial-gradient(circle at center center, #4b0082, #ff1493); /* Morado a fucsia */
+
+}
+
+/* Icono dentro del botón */
+.btn-155 .button-icon {
+    background: #ffffff;         /* Fondo blanco para el ícono */
+    position: absolute;          /* Posición absoluta dentro del botón */
+    display: flex;               /* Flexbox para centrar el SVG */
+    align-items: center;         /* Centra verticalmente el SVG */
+    justify-content: center;     /* Centra horizontalmente el SVG */
+    width: 40px;                 /* Ancho inicial del contenedor del ícono */
+    border-radius: 7px;          /* Bordes redondeados del contenedor del ícono */
+    right: 5px;                  /* Separación de 5px desde el borde derecho */
+    top: 5px;                    /* Separación de 5px desde arriba */
+    bottom: 5px;                 /* Separación de 5px desde abajo */
+    transition: all 0.3s;        /* Transición suave en hover/active */
+}
+
+/* Hover: el icono se expande */
+.btn-155:hover .button-icon {
+    width: calc(100% - 10px);    /* El ícono se expande casi al ancho completo del botón */
+}
+
+/* SVG dentro del icono */
+.btn-155 .button-icon svg {
+    width: 1.1em;                /* Tamaño del ícono SVG */
+    transition: transform 0.3s;  /* Transición suave al mover el ícono */
+    color: #000000;              /* Color negro del ícono */
+}
+
+/* Hover: el SVG se mueve un poco */
+.btn-155:hover .button-icon svg {
+    transform: translateX(0.1em);/* El ícono se desplaza ligeramente a la derecha */
+}
+
+/* Active: efecto de presión */
+.btn-155:active .button-icon {
+    transform: scale(0.95);      /* El ícono se reduce un poco al hacer clic */
+}
+
+/*** disabled style ***/
+a.btn-155:disabled, button.btn-155:disabled {
+    pointer-events: none;        /* Desactiva interacción */
+    opacity: .65;                /* Botón más transparente */
+    color: #666666;              /* Texto gris */
+    background: #dcdcdc;         /* Fondo gris claro */
+    text-shadow: none;           /* Sin sombra de texto */
+    box-shadow: none;            /* Sin sombra externa */
+}
+
+a.btn-155:disabled .button-icon,
+button.btn-155:disabled .button-icon {
+    background: #cccccc;         /* Fondo gris para el ícono en estado deshabilitado */
+}

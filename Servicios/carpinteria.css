@@ -1,0 +1,66 @@
+/* ======== ESTILO PARA ENCABEZADOS H1 ======== */
+h1 {
+    font-size: 2.5em;                  /* 🔥 Texto más grande para destacar */
+    text-align: center;                /* Centrado en la página */
+    color: #ff1493;                    /* Rosa fucsia intenso */
+    text-transform: uppercase;         /* Convierte el texto a mayúsculas */
+    letter-spacing: 3px;               /* Espaciado entre letras para elegancia */
+    margin-bottom: 30px;               /* Espacio debajo del título */
+    text-shadow: 0 0 10px rgba(255, 20, 147, 0.7); /* 🔥 Sombra brillante fucsia */
+}
+
+
+/* ======== ESTILOS GENERALES ======== */
+body {
+    background-color: #000;   /* Fondo negro sólido */
+    font-family: Arial, sans-serif; /* Fuente limpia */
+    color: #fff;              /* Texto blanco */
+    margin: 0;
+    padding: 20px;
+}
+
+/* ======== TARJETA DE INFORMACIÓN ======== */
+.card {
+    display: flex;                     /* Imagen y texto en fila (PC/Laptop) */
+    align-items: center;               /* Centra verticalmente imagen y texto */
+    gap: 20px;                         /* Espacio entre imagen y texto */
+    /* Gradiente radial morado a azul eléctrico */
+background: radial-gradient(circle at center, 
+    rgba(138, 43, 226, 0.25),   /* Morado (BlueViolet) con transparencia */
+    rgba(0, 191, 255, 0.15));   /* Azul eléctrico (DeepSkyBlue) con transparencia */
+
+    border: 2px solid rgba(173, 216, 230, 0.6);  /* Borde celeste más grueso */
+    border-radius: 12px;               /* Bordes redondeados */
+    padding: 20px;                     /* Espacio interno */
+    max-width: 1000px;                 /* Ancho máximo de la tarjeta */
+    margin: 20px auto;                 /* Centrada en la página */
+}
+
+/* Imagen dentro de la tarjeta */
+.card img {
+    max-width: 300px;                  /* Tamaño máximo de la imagen */
+    border-radius: 10px;               /* Bordes redondeados */
+    flex-shrink: 0;                    /* La imagen no se reduce demasiado */
+}
+
+/* Texto dentro de la tarjeta */
+.card-text {
+    flex: 1;                           /* El texto ocupa el espacio restante */
+    line-height: 1.6;                  /* Espaciado entre líneas */
+}
+
+/* ======== RESPONSIVE PARA MÓVILES ======== */
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;        /* Imagen arriba, texto abajo */
+        text-align: center;            /* Centra el texto en móvil */
+    }
+
+    .card img {
+        max-width: 100%;               /* Imagen ocupa todo el ancho disponible */
+    }
+
+    .card-text {
+        margin-top: 15px;              /* Espacio entre imagen y texto */
+    }
+}

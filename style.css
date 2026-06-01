@@ -1,0 +1,47 @@
+body {
+  display: flex;              /* Convierte el body en un contenedor flexbox */
+  flex-direction: column;     /* Coloca los elementos uno debajo del otro (verticalmente) */
+  justify-content: center;    /* Centra los elementos verticalmente en la pantalla */
+  align-items: center;        /* Centra los elementos horizontalmente */
+  min-height: 100vh;          /* Hace que el body ocupe toda la altura de la ventana (viewport height) */
+  background-color: #000;     /* Fondo negro sólido en toda la página */
+  overflow: hidden;           /* Evita que el contenido se desborde fuera de la pantalla */
+}
+
+img {
+  max-width: 90%;             /* La imagen nunca será más ancha que el 90% del ancho disponible */
+  height: auto;               /* Mantiene la proporción original de la imagen */
+  display: block;             /* Elimina espacios extra alrededor de la imagen */
+  margin: 0 auto;             /* Centra la imagen horizontalmente */
+}
+
+.buttonClass {
+  text-decoration: none;   /* quita subrayado de los enlaces */
+  display: inline-block;   /* hace que se comporte como botón */
+  line-height: 50px;       /* centra el texto verticalmente (ajusta al alto que uses) */
+  text-align: center;      /* centra el texto horizontalmente */
+  font-size: 15px;            /* Tamaño del texto dentro del botón */
+  font-family: Arial;         /* Fuente del texto */
+  width: 140px;               /* Ancho fijo del botón */
+  height: 50px;               /* Alto fijo del botón */
+  border-width: 1px;          /* Grosor del borde */
+  color: #fff;                /* Color del texto (blanco) */
+  border-color: #599bb3;      /* Color del borde */
+  font-weight: bold;          /* Texto en negrita */
+  border-radius: 8px;         /* Bordes redondeados */
+  text-shadow: 0px 1px 0px #3d768a; /* Sombra ligera detrás del texto */
+  background: linear-gradient(#00f0ff, #0077ff); /* Fondo degradado azul */
+  margin-top: 2px;           /* Espacio entre el botón y la imagen/título */
+  transition: box-shadow 0.5s ease, background 0.5s ease; /* ✨ Transición suave para el box-shadow y el fondo */
+}
+
+.buttonClass:hover {
+  background: linear-gradient(#599bb3, #408c99); /* Cambia el degradado al pasar el mouse */
+  box-shadow: 0px 3px 14px 15px #00f0ff; /* Aparece la sombra al pasar el mouse */
+}
+
+@media (min-width: 1024px) {
+  img {
+    max-width: 50%;           /* En pantallas grandes (PC), la imagen se reduce al 50% del ancho */
+  }
+}
